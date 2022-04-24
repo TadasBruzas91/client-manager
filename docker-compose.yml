@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  web-dev:
+    build:
+      context: ./client-manager-web
+      dockerfile: Dockerfile.dev
+    ports:
+      - 3000:3000
+    volumes:
+      - ./client-manager-web:/app

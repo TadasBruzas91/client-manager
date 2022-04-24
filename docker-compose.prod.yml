@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  web-prod:
+    build:
+      context: ./client-manager-web
+      dockerfile: Dockerfile.prod
+    ports:
+      - 80:80
