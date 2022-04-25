@@ -1,10 +1,14 @@
+import NavBar from './navbar';
+import { config } from './utils/configLoader';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      Docker
-    </div>
+    <>
+      <NavBar links={config.navlinks} />
+      <div className="App">
+      </div>
+    </>
   );
 }
 

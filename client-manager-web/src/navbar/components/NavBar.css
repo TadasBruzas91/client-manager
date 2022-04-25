@@ -1,0 +1,15 @@
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: first baseline;
+}
+
+.link,
+.link:visited {
+  text-decoration: none;
+  margin: 10px;
+  font-weight: bolder;
+  font-size: large;
+  color: rgb(26, 21, 21);
+  transition: all 0.5s;
+}
