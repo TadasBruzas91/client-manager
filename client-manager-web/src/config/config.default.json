@@ -1,8 +1,7 @@
 {
   "navlinks": [
-    { "_id": 1, "path": "/", "label": "Home" },
-    { "_id": 2, "path": "/dashboard", "label": "Dashboard" },
-    { "_id": 3, "path": "/clients", "label": "Clients" },
-    { "_id": 4, "path": "/about", "label": "About" }
+    { "path": "/", "label": "Home" },
+    { "path": "/dashboard", "label": "Dashboard" },
+    { "path": "/clients", "label": "Clients" }
   ]
 }
