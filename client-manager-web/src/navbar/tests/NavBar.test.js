@@ -1,5 +1,5 @@
 import { config } from "../../utils/configLoader"
-import { setIds } from "../helper/genetateIds"
+import { setIds } from "../../utils/generateIds"
 
 describe("NavBar", () => {
     let navlinksWithIds = []

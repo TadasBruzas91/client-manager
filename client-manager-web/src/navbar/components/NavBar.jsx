@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { setIds } from "../helper/genetateIds";
+import { setIds } from "../../utils/generateIds";
 import "./NavBar.css";
 
 export default function NavBar({ links }) {
