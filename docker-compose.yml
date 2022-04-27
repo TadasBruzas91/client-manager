@@ -19,3 +19,10 @@ services:
       - 3001:3001
     volumes:
       - ./client-manager-api:/app
+    restart: unless-stopped
+
+  db-dev:
+    image: mongo:4.0.28-xenial
+    ports:
+      - 27017:27017
+    restart: unless-stopped
