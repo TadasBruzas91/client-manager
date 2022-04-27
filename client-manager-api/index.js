@@ -17,11 +17,14 @@ if (cluster.isMaster) {
     });
 } else {
     const express = require("express");
+    const mongoose = require("mongoose")
     const helmet = require("helmet")
     const cors = require("cors")
     const clients = require("./routes/clients")
     const PORT = 3001;
     const app = express();
+
+    mongooseMain()
 
     app.use(helmet())
     app.use(cors())
@@ -32,6 +35,15 @@ if (cluster.isMaster) {
         const msg = `Server is running on ${totalCPUs} CPUs...`
         res.send(msg)
     })
+
+    async function mongooseMain() {
+        try {
+            await mongoose.connect("mongodb://db-dev:27017/clients-manager")
+            console.info("Mongoose connected to mongodb successfully...")
+        } catch (ex) {
+            console.error(ex)
+        }
+    }
 
     app.listen(PORT, () => {
         console.log(`Worker ${process.pid} listening on port: ${PORT}...`);
