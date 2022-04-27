@@ -12,6 +12,6 @@ const clientSchema = new mongoose.Schema({
 
 clientSchema.plugin(mongoosePaginate)
 
-const clientsModel = mongoose.model("Clients-db", clientSchema)
+const Client = mongoose.model("Clients", clientSchema)
 
-module.exports = clientsModel
+module.exports = Client
