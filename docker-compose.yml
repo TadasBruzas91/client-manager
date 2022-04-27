@@ -10,3 +10,12 @@ services:
     volumes:
       - ./client-manager-web:/app
     restart: unless-stopped
+
+  api-dev:
+    build:
+      context: ./client-manager-api
+      dockerfile: Dockerfile.dev
+    ports:
+      - 3001:3001
+    volumes:
+      - ./client-manager-api:/app

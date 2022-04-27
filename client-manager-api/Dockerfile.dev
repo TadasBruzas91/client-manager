@@ -1,0 +1,13 @@
+From node:16.14.2-alpine3.14
+
+RUN mkdir /app
+
+
+WORKDIR /app
+COPY . ./
+
+USER node
+
+EXPOSE 3001
+
+CMD npm start
