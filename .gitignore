@@ -1,19 +1,19 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/client-manager-web/node_modules
-/client-manager-web/.pnp
-/client-manager-web/.pnp.js
+/*/node_modules
+/*/.pnp
+/*/.pnp.js
 /node_modules
 .pnp
 .pnp.js
 
 # testing
-/client-manager-web/coverage
+/*/coverage
 /coverage
 
 # production
-/client-manager-web/build
+/*/build
 /build
 
 # misc
