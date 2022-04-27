@@ -17,9 +17,12 @@ if (cluster.isMaster) {
     });
 } else {
     const express = require("express");
-    const PORT = 3000;
+    const clients = require("./routes/clients")
+    const PORT = 3001;
     const app = express();
-    console.log(`Worker ${process.pid} started`);
+
+    app.use(express.json())
+    app.use("/api/clients", clients)
 
     app.get("/", (_, res) => {
         const msg = `Server is running on ${totalCPUs} CPUs...`
@@ -27,7 +30,7 @@ if (cluster.isMaster) {
     })
 
     app.listen(PORT, () => {
-        console.log(`Server listening on port: ${PORT}...`);
+        console.log(`Worker ${process.pid} listening on port: ${PORT}...`);
     });
 }
 
