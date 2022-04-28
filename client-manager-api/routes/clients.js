@@ -9,6 +9,12 @@ router.get("/", async (req, res) => {
     res.json(clients)
 })
 
+// Count users put requirements in body json if body is emty return all users count
+router.get("/count", async (req, res) => {
+    const count = await Client.find(req.body).count()
+    res.json(count)
+})
+
 // Get one client
 router.get("/:id", async (req, res) => {
     const { id } = req.params
