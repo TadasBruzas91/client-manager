@@ -4,11 +4,13 @@ RUN mkdir /app
 
 
 WORKDIR /app
-COPY . ./
+COPY package*.json ./
+RUN npm install
+COPY . .
 
 USER node
-ENV DB_NAME=db-dev
+ENV DB_NAME=db-prod
 
 EXPOSE 3001
 
-CMD npm start
+CMD node index.js

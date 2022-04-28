@@ -37,8 +37,9 @@ if (cluster.isMaster) {
     })
 
     async function mongooseMain() {
+        const dbName = process.env.DB_NAME
         try {
-            await mongoose.connect("mongodb://db-dev:27017/clients-manager")
+            await mongoose.connect(`mongodb://${dbName}:27017/clients-manager`)
             console.info("Mongoose connected to mongodb successfully...")
         } catch (ex) {
             console.error(ex)

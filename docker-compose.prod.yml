@@ -8,3 +8,19 @@ services:
     ports:
       - 80:80
     restart: unless-stopped
+
+  api-prod:
+    build:
+      context: ./client-manager-api
+      dockerfile: Dockerfile.prod
+    ports:
+      - 3001:3001
+    volumes:
+      - ./client-manager-api:/app
+    restart: unless-stopped
+
+  db-prod:
+    image: mongo:4.0.28-xenial
+    ports:
+      - 27017:27017
+    restart: unless-stopped
