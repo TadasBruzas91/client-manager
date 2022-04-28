@@ -15,8 +15,6 @@ services:
       dockerfile: Dockerfile.prod
     ports:
       - 3001:3001
-    volumes:
-      - ./client-manager-api:/app
     restart: unless-stopped
 
   db-prod:

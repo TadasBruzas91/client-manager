@@ -1,4 +1,4 @@
-From node:16.14.2-alpine3.14
+FROM node:16.14.2-alpine3.14
 
 RUN mkdir /app
 
@@ -13,4 +13,4 @@ ENV DB_NAME=db-prod
 
 EXPOSE 3001
 
-CMD node index.js
+ENTRYPOINT [ "node","index.js" ]
