@@ -5,7 +5,7 @@
     { "path": "/clients", "label": "Clients" }
   ],
   "api": {
-    "url": "http://127.0.0.1",
+    "url": "http://192.168.1.149",
     "port": 3001
   }
 }
