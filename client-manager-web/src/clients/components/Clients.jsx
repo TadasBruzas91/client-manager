@@ -1,22 +1,29 @@
-import React, { useEffect, useState, useTransition } from "react";
-// import clientsData from "../../data.json";
+import React, { useEffect, useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { clients } from "../logic/clients";
 
 export default function Clients() {
-  // const [data, setData] = useState([{ _id: 1, name: "Tadas" }]);
-  // const [isPending, startTransition] = useTransition();
+  const [data, setData] = useState([]);
+  const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   startTransition(() => {
-  //     setData(clientsData);
-  //   });
-  // }, []);
+  useEffect(() => {
+    clients.setupDataSenderToUi(setData);
+    clients.loadDataFromDb();
+  }, []);
+
   return (
     <div>
-      <button>Add new client</button>
+      <button onClick={() => navigate("/client")}>Add new client</button>
       <ul>
-        {/* {isPending
-          ? data.map((item) => <li key={item._id}>{item.name}</li>)
-          : "Loading"} */}
+        {data.length > 0
+          ? data.map((item) => (
+              <Link key={item._id} to={`/client/${item._id}`}>
+                <li>
+                  {item.name} {item.surname}
+                </li>
+              </Link>
+            ))
+          : "No data."}
       </ul>
     </div>
   );

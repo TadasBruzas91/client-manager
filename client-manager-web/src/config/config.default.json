@@ -3,5 +3,9 @@
     { "path": "/", "label": "Home" },
     { "path": "/dashboard", "label": "Dashboard" },
     { "path": "/clients", "label": "Clients" }
-  ]
+  ],
+  "api": {
+    "url": "http://127.0.0.1",
+    "port": 3001
+  }
 }
